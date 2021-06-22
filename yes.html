@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<style>
+		*{
+			margin: 0px;
+			padding: 0px;
+		}
+		img[src="img/music_note_big.png"]{
+			position: fixed;	
+			top: 5px;		
+			right: 5px;
+		}
+		#yes-div1{
+			background-image: url(img/2.jpg);
+			background-size: cover;
+			background-repeat: no-repeat;
+			position: absolute;
+			left: 50%;
+			transform: translate(-50%);
+			height: 1000px;
+			width: 400px;
+		}
+		#yes-div2{
+			text-align: center;
+			line-height: 45px;
+			margin-top: 80px;
+		}
+	</style>
+	<body>
+		<div id="yes-div1">
+		<img src="img/music_note_big.png" onclick="start()"/>
+		<audio src="./img/408704261.mp3" id="audio"></audio>
+		<div id="yes-div2">
+		 初识你名，久居我心<br />
+                       花开成海，思你成灾<br />
+                      一人一心，白首不离<br />
+                      几份痴情，几份在意<br />
+		 尽我所能，爱你所有<br />
+		承蒙厚爱，请多指教<br />
+		 携子之手，陪你到老<br />
+ 		久伴不离，此生不弃<br />
+		 余生很长，多多指教<br />	
+		</div>
+		</div>	
+	</body>
+	<script>
+		var d;
+		var num=1;
+		window.onload=function(){
+		var audio=document.getElementById("audio");
+		d=audio.play();	
+		}
+		function start(){
+			if(d==null){
+				d=audio.play();	
+			}else{
+				d=audio.pause();
+				d==null;
+			}
+		}
+	</script>
+</html>

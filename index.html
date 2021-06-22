@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+	</head>
+	<style>
+		*{
+			margin: 0px;
+			padding: 0px;
+		}	
+		h1{
+			float: left;
+		}	
+		#div1{
+			text-align: center;
+			background-image: url(img/1.jpg) ;
+			background-size: cover;
+			background-repeat: no-repeat;
+			position: absolute;
+			left: 50%;
+			transform: translate(-50%);
+			height: 1000px;
+			width: 400px;
+		}
+		#div2{
+			padding-top: 70px;	
+		}
+		img[src="img/music_note_big.png"]{
+			position: fixed;	
+			top: 5px;		
+			right: 5px;
+			
+		}
+		ol{
+			list-style-type: none;
+		}
+		button{
+			position: relative;
+		    margin: 63px;
+		    width: 61px;
+		    height: 58px;
+		    border: 1px solid white;
+		    border-radius: 5px;
+		    background-color: rgba(0,0,0,0.6);
+		    color: white;
+		}
+		#take{
+			border: 1px solid papayawhip;
+			display: none;
+			color: gray;
+			background-color: white;
+			text-align: center;
+			border-radius: 5px;
+			width: 100%;
+    		height: 180px;
+		}
+		#yes{
+			border: 1px solid papayawhip;
+			display: none;
+			color: gray;
+			background-color: white;
+			text-align: center;
+			border-radius: 5px;
+			width: 100%;
+    		height: 180px;
+		}
+	</style>
+	<body>
+		<div id="div1">	
+			<div id="div2">
+			<img src="img/music_note_big.png" onclick="start()"/>
+			<audio src="./img/408704261.mp3" id="audio"></audio>	
+			<h1>我真的很爱你</h1>
+			<div id="img">
+				<img src="img/1.gif" />
+			</div>
+			<span>春风十里，不及相遇有你； 晴空万里，不及心中有你；<br/>人海十万里，我只想要你🌈🌟💄☁️🍒</span>
+			<ol id="ol">
+			</ol>
+			<div id="take">
+				<img src="img/emoji_kelian.jpg" onclick="open1()"/><br />
+				<h3>请你告诉我呢</h3>
+			</div>
+			<div id="yes">
+				<img src="img/emoji_bixin.jpg"/><br />
+				<h3>太好了，哈哈~~</h3>
+			</div>
+			<button onclick="yes()">Yes  ❤</button>
+			<button onclick="no()">No  ✖</button>
+			</div>
+		</div>
+		
+	</body>
+	<script>
+		var d;
+		var num=1;
+		window.onload=function(){
+		var audio=document.getElementById("audio");
+		d=audio.play();	
+		}
+		function start(){
+			if(d==null){
+				d=audio.play();	
+			}else{
+				d=audio.pause();
+				d==null;
+			}
+		}
+		function no(){
+            var ol = document.getElementById("ol");
+			if(num==1){
+				var li1 = document.createElement("li");  
+	            var tex1 = document.createTextNode("我喜欢你，就像小时候喜欢辣条，没有道理🥰");
+	            var br =document.createElement("br")
+	            li1.appendChild(tex1);
+	            ol.appendChild(li1);
+	            ol.appendChild(br)
+					num++;
+			}else if(num==2){
+				var li1 = document.createElement("li");  
+	            var tex1 = document.createTextNode("我喜欢你，多想跨过手机抱住你，而不是抱着手机想你💖");
+	            var br =document.createElement("br")
+	            li1.appendChild(tex1);
+	            ol.appendChild(li1);
+	            ol.appendChild(br)
+					num++;
+			}else if(num==3){
+				var li1 = document.createElement("li");  
+	            var tex1 = document.createTextNode("我喜欢你，多想每天早晚都有你，而不是照片中的你💗");
+	            var br =document.createElement("br")
+	            li1.appendChild(tex1);
+	            ol.appendChild(li1);
+	            ol.appendChild(br)
+					num++;
+			}else if(num==4){
+				var li1 = document.createElement("li");  
+	            var tex1 = document.createTextNode("我喜欢你，今生的爱，只想给你💕");
+	            var br =document.createElement("br")
+	            li1.appendChild(tex1);
+	            ol.appendChild(li1);
+	            ol.appendChild(br)
+					num++;
+			}else if(num==5){
+				var li1 = document.createElement("li");  
+	            var tex1 = document.createTextNode("我喜欢你，往后余生，我只要你💞");
+	            var br =document.createElement("br")
+	            li1.appendChild(tex1);
+	            ol.appendChild(li1);
+	            ol.appendChild(br)
+					num++;
+			}else {
+				document.getElementById("take").style.display="block";
+				document.getElementsByTagName("button")[0].style.display="none";
+				document.getElementsByTagName("button")[1].style.display="none";
+			}	
+		}
+		function yes(){
+			document.getElementById("yes").style.display="block";
+				document.getElementsByTagName("button")[0].style.display="none";
+				document.getElementsByTagName("button")[1].style.display="none";
+				setTimeout(function(){
+					window.location.href="yes.html";
+				},3000);
+		}
+		function open1(){
+			document.getElementById("take").style.display="none";
+			document.getElementsByTagName("button")[0].style.display="inline-block";
+			document.getElementsByTagName("button")[1].style.display="inline-block";
+		}
+//		document.getElementById("div1").style.width = window.innerWidth + "px";
+//		document.getElementById("div1").style.height = window.innerHeight + "px";
+	</script>
+</html>
