@@ -47,5 +47,5 @@ jobs:
 
       - name: Deploy to GitHub Pages
         run: |
-          ls -a
+          git version
 
